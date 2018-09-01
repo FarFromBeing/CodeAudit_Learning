@@ -1,0 +1,22 @@
+几种语句和框架版本常见的URL跳转代码如下，可用作白盒代码审计参考：
+Java:
+response.sendRedirect(request.getParameter("url"));
+
+PHP:
+$redirect_url = $_GET['url'];
+header("Location: " . $redirect_url);
+
+.NET:
+string redirect_url = request.QueryString["url"];
+Response.Redirect(redirect_url);
+
+Django:
+redirect_url = request.GET.get("url")
+HttpResponseRedirect(redirect_url)
+
+Flask:
+redirect_url = request.form['url']
+redirect(redirect_url)
+
+Rails:
+redirect_to params[:url]
