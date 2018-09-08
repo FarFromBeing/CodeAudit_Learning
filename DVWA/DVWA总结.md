@@ -61,7 +61,7 @@ PHP中的三种数组：
 
 测试：输入框内的值作为字符串传入trim，并不会执行去除,则这个函数存在的意义是什么？
 
-之前查W3C，并没有直接说是前后去除，结果查资料才知道，是去除收尾的一些符号，之前测试都是中间的符号....
+之前查W3C，并没有直接说是前后去除，结果查资料才知道，是去除收尾的一些符号，之前测试都是中间的符号...
 
 所以说high级别可以用|net user 进行注入，没毛病。
 
@@ -75,4 +75,21 @@ PHP中的三种数组：
 
 测试结果：
 
-![](https://i.imgur.com/3o93iQD.png)
+![](https://i.imgur.com/3o93iQD.png)        
+
+**XSS-Reflect**
+今天进行DVWA XSS测试发现个有趣的事。
+> DVWA1.9
+> 
+> PHP7.2.5
+> 
+> chrome latest version
+
+
+在high级别进行测试的测试的时候，顺利弹框，显示cookie
+
+![](https://i.imgur.com/2laH60n.png)
+
+但是自己重新改了一小部分内容，放到XAMPP环境下，使用相同的Chrome就被拦截了，猜想是不是DVWA是不是对Chrome进行了修改，使其开放一些脚本的加载。
+
+![](https://i.imgur.com/lgsHd9Z.png)
